@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kristina Barbe — Digital Marketing &amp; SEO Specialist</title>
+  <meta name="description" content="Kristina Barbe, MD — digital marketing specialist focused on SEO at SapientPro. SEO audits, keyword research, link building and AI-powered SEO workflows for healthcare, IT and e-commerce.">
+  <link rel="canonical" href="https://kristinabarbe.github.io/">
+
+  <!-- Open Graph / social previews -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Kristina Barbe — Digital Marketing &amp; SEO Specialist">
+  <meta property="og:description" content="SEO specialist at SapientPro with a medical background. Healthcare, HealthTech, IT and e-commerce SEO.">
+  <meta property="og:url" content="https://kristinabarbe.github.io/">
+  <meta property="og:image" content="https://kristinabarbe.github.io/kristina-barbe.jpg">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kristina Barbe",
+    "honorificSuffix": "MD",
+    "url": "https://kristinabarbe.github.io/",
+    "image": "https://kristinabarbe.github.io/kristina-barbe.jpg",
+    "email": "mailto:dr.kristina.barbe@gmail.com",
+    "jobTitle": "Digital Marketing Specialist (SEO)",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "SapientPro",
+      "url": "https://sapient.pro/"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Bukovinian State Medical University"
+    },
+    "knowsLanguage": ["uk", "ru", "ro", "en"],
+    "knowsAbout": ["Search Engine Optimization", "Technical SEO", "Link Building", "Keyword Research", "SEO Automation", "AI Agents", "Content Strategy", "Google Analytics", "Healthcare Marketing"],
+    "sameAs": ["https://www.linkedin.com/in/kristina-barbe/"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --surface: #ffffff;
+      --text: #1c1917;
+      --muted: #57534e;
+      --border: #e7e5e4;
+      --accent: #4f46e5;
+      --accent-soft: #eef2ff;
+      --nav-bg: rgba(250, 250, 249, 0.8);
+      --glow-1: rgba(129, 140, 248, 0.22);
+      --glow-2: rgba(251, 191, 160, 0.25);
+      --glow-3: rgba(196, 181, 253, 0.20);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c0a09;
+        --surface: #1c1917;
+        --text: #f5f5f4;
+        --muted: #a8a29e;
+        --border: #292524;
+        --accent: #818cf8;
+        --accent-soft: #1e1b4b;
+        --nav-bg: rgba(12, 10, 9, 0.75);
+        --glow-1: rgba(99, 102, 241, 0.18);
+        --glow-2: rgba(234, 88, 12, 0.10);
+        --glow-3: rgba(139, 92, 246, 0.14);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Background: soft gradient glow (fixed layer, so it doesn't jitter on mobile scroll) */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(40rem 30rem at 0% 0%, var(--glow-1), transparent 70%),
+        radial-gradient(36rem 28rem at 100% 15%, var(--glow-2), transparent 70%),
+        radial-gradient(40rem 30rem at 50% 110%, var(--glow-3), transparent 70%);
+    }
+
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
+    /* Sticky section menu */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topnav-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 10px 14px;
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .topnav-inner::-webkit-scrollbar { display: none; }
+
+    .topnav a {
+      flex-shrink: 0;
+      padding: 6px 10px;
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.15s, background-color 0.15s;
+    }
+
+    .topnav a:hover { color: var(--text); }
+
+    .topnav a.active {
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    section { scroll-margin-top: 72px; }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 20px 48px;
+    }
+
+    a { color: var(--accent); }
+
+    .avatar {
+      display: block;
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: var(--accent-soft);
+      border: 4px solid var(--surface);
+      box-shadow: 0 0 0 1px var(--border), 0 8px 24px rgba(0, 0, 0, 0.08);
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 2.75rem);
+      line-height: 1.15;
+      margin: 0 0 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .role {
+      font-size: 1.125rem;
+      color: var(--muted);
+      margin: 0 0 32px;
+    }
+
+
+    h2 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin: 48px 0 16px;
+    }
+
+    p { margin: 0 0 16px; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .tags li {
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface);
+      font-size: 0.9rem;
+    }
+
+    .checklist {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .checklist li { margin-bottom: 6px; }
+    .checklist li::marker { color: var(--accent); }
+
+    /* Experience, education and certificates share one list style */
+    .entries {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+      overflow: hidden;
+    }
+
+    .entries li {
+      padding: 14px 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .entries li:first-child { border-top: 0; }
+
+    .entry-title { font-weight: 600; }
+    .entry-title a { text-decoration: none; }
+    .entry-title a:hover { text-decoration: underline; }
+
+    .entry-meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      transition: border-color 0.15s, transform 0.15s;
+    }
+
+    .btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+
+    .btn.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <nav class="topnav" aria-label="Sections">
+    <div class="topnav-inner">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#languages">Languages</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <header>
+      <img class="avatar" src="kristina-barbe.jpg" alt="Portrait of Kristina Barbe" width="128" height="128">
+      <h1>Kristina Barbe</h1>
+      <p class="role">
+        Digital Marketing Specialist · SEO at SapientPro
+      </p>
+    </header>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I'm a digital marketing specialist with a strong focus on SEO, passionate about organic growth,
+        website optimization, and content that delivers value to both users and businesses.
+        I've worked on real-world projects across medical, e-commerce, and IT websites, and learned
+        how SEO strategy has to adapt to each industry, audience, and business goal.
+      </p>
+      <p>
+        I hold a medical degree (MD) and worked as a doctor before moving into marketing, which gives
+        me a particular interest in healthcare and health-tech. As an SEO specialist on a medical
+        project, I've combined that medical knowledge with SEO, content, and digital marketing.
+      </p>
+      <p>
+        I also use AI tools in my everyday work and build agent-powered workflows that automate
+        repetitive SEO processes, so I can spend more time on strategy.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Focus areas</h2>
+      <ul class="tags">
+        <li>Technical SEO</li>
+        <li>SEO audits</li>
+        <li>Keyword research &amp; clustering</li>
+        <li>On-page optimization</li>
+        <li>Link building</li>
+        <li>Content strategy</li>
+        <li>SEO process automation</li>
+        <li>AI tools for marketing</li>
+        <li>Agentic AI workflows</li>
+        <li>Analytics &amp; reporting</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What I do</h2>
+      <ul class="checklist">
+        <li>Automate routine SEO tasks with AI tools and agent-powered workflows</li>
+        <li>Run SEO audits and find technical and on-page optimization opportunities</li>
+        <li>Research keywords, build clusters, and analyze search intent</li>
+        <li>Create and optimize SEO-friendly content and content plans for e-commerce and medical projects</li>
+        <li>Develop and implement link-building strategies for medical and IT websites</li>
+        <li>Optimize meta titles, descriptions, headings, internal linking, and site structure</li>
+        <li>Analyze competitors and SERP opportunities</li>
+        <li>Monitor SEO performance and user behavior with Google Search Console and Google Analytics</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Tools</h2>
+      <ul class="tags">
+        <li>Google Search Console</li>
+        <li>Google Analytics 4</li>
+        <li>Ahrefs</li>
+        <li>SE Ranking</li>
+        <li>Serpstat</li>
+        <li>Screaming Frog</li>
+        <li>AI assistants &amp; agents</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Industries</h2>
+      <ul class="tags">
+        <li>Healthcare</li>
+        <li>HealthTech</li>
+        <li>IT</li>
+        <li>E-commerce</li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul class="entries">
+        <li>
+          <div class="entry-title">Digital Marketing Specialist (SEO)</div>
+          <div class="entry-meta">SapientPro · Nov 2025 – Present</div>
+        </li>
+        <li>
+          <div class="entry-title">SEO Specialist</div>
+          <div class="entry-meta">ADINDEX Digital Marketing Agency · Feb 2025 – Nov 2025</div>
+        </li>
+        <li>
+          <div class="entry-title">Medical Resident</div>
+          <div class="entry-meta">Bukovinian State Medical University · Sep 2019 – Aug 2021 · Chernivtsi, Ukraine</div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul class="entries">
+        <li>
+          <div class="entry-title">Doctor of Medicine (MD)</div>
+          <div class="entry-meta">Bukovinian State Medical University · 2013 – 2019</div>
+        </li>
+        <li>
+          <div class="entry-title">Diploma “Digital Marketing Specialist”</div>
+          <div class="entry-meta">Genius.Space · 2025</div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="languages">
+      <h2>Languages</h2>
+      <ul class="entries">
+        <li>
+          <div class="entry-title">Ukrainian</div>
+          <div class="entry-meta">Native or bilingual</div>
+        </li>
+        <li>
+          <div class="entry-title">Russian</div>
+          <div class="entry-meta">Full professional</div>
+        </li>
+        <li>
+          <div class="entry-title">Romanian</div>
+          <div class="entry-meta">Professional working</div>
+        </li>
+        <li>
+          <div class="entry-title">English</div>
+          <div class="entry-meta">Intermediate (B1)</div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul class="entries">
+        <li>
+          <div class="entry-title"><a href="https://drive.google.com/file/d/1IutFU00GqxYbRvoS4LcMx5vP2WnxDWlT/view" target="_blank" rel="noopener">AI for Business</a></div>
+          <div class="entry-meta">Google · Dec 2025</div>
+        </li>
+        <li>
+          <div class="entry-title">AI SEO Day 2025</div>
+          <div class="entry-meta">WebPromoExperts · Jun 2025</div>
+        </li>
+        <li>
+          <div class="entry-title"><a href="https://app.lewagon.school/certificates/y9toneni8x" target="_blank" rel="noopener">Intro to AI-driven SEO</a></div>
+          <div class="entry-meta">Le Wagon · Jun 2025</div>
+        </li>
+        <li>
+          <div class="entry-title"><a href="https://skillshop.credential.net/dd43ce20-6c15-45b2-9f7d-e4b3f8725667" target="_blank" rel="noopener">Google Analytics Certification</a></div>
+          <div class="entry-meta">Google Skillshop · Jun 2025 (expired Jun 2026)</div>
+        </li>
+        <li>
+          <div class="entry-title"><a href="https://static.semrush.com/academy/certificates/077619149b/kristina-barbe_6.pdf" target="_blank" rel="noopener">GA4 for SEO: How Data Helps Businesses Grow</a></div>
+          <div class="entry-meta">Semrush · May 2025 (expired May 2026)</div>
+        </li>
+        <li>
+          <div class="entry-title"><a href="https://certs.prometheus.org.ua/downloads/fb3c5c0c6ed54d609d459ca5ec9591c5/Certificate.pdf" target="_blank" rel="noopener">Getting Started with ChatGPT</a></div>
+          <div class="entry-meta">Prometheus · May 2025</div>
+        </li>
+        <li>
+          <div class="entry-title"><a href="https://www.coursera.org/account/accomplishments/specialization/Z7G9ZD84PTSS" target="_blank" rel="noopener">Search Engine Optimization (SEO) Specialization</a></div>
+          <div class="entry-meta">University of California, Davis (Coursera) · Mar 2025</div>
+        </li>
+        <li>
+          <div class="entry-title">SEO Internship Certificate</div>
+          <div class="entry-meta">ADINDEX Digital Marketing Agency · Mar 2025</div>
+        </li>
+        <li>
+          <div class="entry-title"><a href="https://app.academyocean.com/verify/t5W3255ib467qoDn" target="_blank" rel="noopener">The Complete SEO Starter Course: From Beginner to Professional</a></div>
+          <div class="entry-meta">Serpstat · Jan 2025</div>
+        </li>
+        <li>
+          <div class="entry-title">Email Marketing Fundamentals</div>
+          <div class="entry-meta">SendPulse · Jan 2025</div>
+        </li>
+        <li>
+          <div class="entry-title"><a href="https://static.semrush.com/academy/certificates/14fc0078a8/kristina-barbe_13.pdf" target="_blank" rel="noopener">Social Media Marketing Crash Course</a></div>
+          <div class="entry-meta">Semrush · Dec 2024 (expired Dec 2025)</div>
+        </li>
+        <li>
+          <div class="entry-title"><a href="https://certs.prometheus.org.ua/cert/da6b95d32a2a48ea855bab7887e43de8" target="_blank" rel="noopener">Digital Media and Marketing Fundamentals</a></div>
+          <div class="entry-meta">Prometheus · Sep 2024</div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Get in touch</h2>
+      <p>Open to networking, collaboration, and new opportunities in SEO and digital marketing.</p>
+      <div class="links">
+        <a class="btn primary" href="mailto:dr.kristina.barbe@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          Email me
+        </a>
+        <a class="btn" href="https://www.linkedin.com/in/kristina-barbe/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year">2026</span> Kristina Barbe
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Highlight the menu item for the section currently in view
+    const navLinks = document.querySelectorAll(".topnav a");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((link) => {
+          const isActive = link.getAttribute("href") === "#" + entry.target.id;
+          link.classList.toggle("active", isActive);
+          // On narrow screens, keep the active item visible in the scrollable menu
+          if (isActive) {
+            const bar = link.parentElement;
+            bar.scrollLeft = link.offsetLeft - (bar.clientWidth - link.offsetWidth) / 2;
+          }
+        });
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    document.querySelectorAll("main section[id]").forEach((s) => observer.observe(s));
+  </script>
+</body>
+</html>
