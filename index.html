@@ -43,7 +43,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -55,9 +55,9 @@
       --accent: #4f46e5;
       --accent-soft: #eef2ff;
       --nav-bg: rgba(250, 250, 249, 0.8);
-      --glow-1: rgba(129, 140, 248, 0.22);
-      --glow-2: rgba(251, 191, 160, 0.25);
-      --glow-3: rgba(196, 181, 253, 0.20);
+      --glow-1: rgba(129, 140, 248, 0.36);
+      --glow-2: rgba(251, 191, 160, 0.42);
+      --glow-3: rgba(196, 181, 253, 0.34);
     }
     @media (prefers-color-scheme: dark) {
       :root {
@@ -69,9 +69,9 @@
         --accent: #818cf8;
         --accent-soft: #1e1b4b;
         --nav-bg: rgba(12, 10, 9, 0.75);
-        --glow-1: rgba(99, 102, 241, 0.18);
-        --glow-2: rgba(234, 88, 12, 0.10);
-        --glow-3: rgba(139, 92, 246, 0.14);
+        --glow-1: rgba(99, 102, 241, 0.28);
+        --glow-2: rgba(234, 88, 12, 0.16);
+        --glow-3: rgba(139, 92, 246, 0.22);
       }
     }
 
@@ -157,8 +157,10 @@
         display: block;
         padding: 6px;
         color: var(--text);
-        font-weight: 600;
-        font-size: 1rem;
+        font-family: "Great Vibes", cursive;
+        font-weight: 400;
+        font-size: 1.9rem;
+        line-height: 1;
       }
 
       .menu-toggle {
@@ -231,16 +233,22 @@
     }
 
     @media (max-width: 480px) {
-      .profile { gap: 18px; }
+      .profile { gap: 14px; }
       .avatar { width: 88px; height: 88px; border-width: 3px; }
       .profile .role { font-size: 1rem; }
     }
 
+    /* Very narrow phones: keep the name on one line */
+    @media (max-width: 360px) {
+      .profile h1 { font-size: 2.2rem; }
+    }
+
     h1 {
-      font-size: clamp(1.6rem, 6vw, 2.75rem);
-      line-height: 1.15;
-      margin: 0 0 8px;
-      letter-spacing: -0.02em;
+      font-family: "Great Vibes", cursive;
+      font-weight: 400;
+      font-size: clamp(2.6rem, 6vw + 1.2rem, 4.75rem);
+      line-height: 1.1;
+      margin: 0 0 6px;
     }
 
     .role {
@@ -312,6 +320,32 @@
       font-size: 0.9rem;
     }
 
+    /* Entries with a logo on the left (tools, certificates) */
+    .entries li.with-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .entry-logo {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #fff;
+      object-fit: contain;
+    }
+
+    .entry-logo.icon {
+      display: grid;
+      place-items: center;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .entry-logo.icon svg { width: 18px; height: 18px; }
+
     .links {
       display: flex;
       flex-wrap: wrap;
@@ -341,6 +375,13 @@
     }
 
     .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    .signature {
+      font-family: "Great Vibes", cursive;
+      font-size: 1.6rem;
+      color: var(--text);
+      margin-left: 4px;
+    }
 
     footer {
       margin-top: 64px;
@@ -424,33 +465,190 @@
         <li>Run SEO audits and find technical and on-page optimization opportunities</li>
         <li>Research keywords, build clusters, and analyze search intent</li>
         <li>Create and optimize SEO-friendly content and content plans for e-commerce and medical projects</li>
+        <li>Own the content pipeline: write briefs for copywriters, review the result, and publish it on the site</li>
         <li>Develop and implement link-building strategies for medical and IT websites</li>
         <li>Optimize meta titles, descriptions, headings, internal linking, and site structure</li>
         <li>Analyze competitors and SERP opportunities</li>
         <li>Monitor SEO performance and user behavior with Google Search Console and Google Analytics</li>
+        <li>Prepare monthly SEO reports for clients with proposals to improve results</li>
       </ul>
     </section>
 
     <section>
       <h2>Tools</h2>
-      <ul class="tags">
-        <li>Google Search Console</li>
-        <li>Google Analytics 4</li>
-        <li>Ahrefs</li>
-        <li>SE Ranking</li>
-        <li>Serpstat</li>
-        <li>Screaming Frog</li>
-        <li>AI assistants &amp; agents</li>
+      <ul class="entries">
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/search-console.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title">Google Search Console</div>
+            <div class="entry-meta">Indexing, search performance, and technical health</div>
+          </div>
+        </li>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/google-analytics.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title">Google Analytics 4</div>
+            <div class="entry-meta">Traffic, conversions, and user behavior</div>
+          </div>
+        </li>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/ahrefs.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title">Ahrefs</div>
+            <div class="entry-meta">Backlink analysis, keyword and competitor research</div>
+          </div>
+        </li>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/se-ranking.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title">SE Ranking</div>
+            <div class="entry-meta">Rank tracking and site audits</div>
+          </div>
+        </li>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/serpstat.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title">Serpstat</div>
+            <div class="entry-meta">Keyword research and SERP analysis</div>
+          </div>
+        </li>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/screaming-frog.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title">Screaming Frog</div>
+            <div class="entry-meta">Technical SEO crawls</div>
+          </div>
+        </li>
+        <li class="with-logo">
+          <span class="entry-logo icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.9 5.6L19.5 9.5l-5.6 1.9L12 17l-1.9-5.6L4.5 9.5l5.6-1.9L12 2zm7 12l.9 2.6 2.6.9-2.6.9L19 21l-.9-2.6-2.6-.9 2.6-.9L19 14z"/></svg>
+          </span>
+          <div>
+            <div class="entry-title">AI assistants &amp; agents</div>
+            <div class="entry-meta">Research, content drafts, and automated SEO workflows</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Also work with</h2>
+      <ul class="entries">
+        <li class="with-logo">
+          <span class="entry-logo icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg>
+          </span>
+          <div>
+            <div class="entry-title">HTML &amp; CSS</div>
+            <div class="entry-meta">Editing page markup and styles</div>
+          </div>
+        </li>
+        <li class="with-logo">
+          <span class="entry-logo icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-5-6-5M12 19h8"/></svg>
+          </span>
+          <div>
+            <div class="entry-title">JavaScript</div>
+            <div class="entry-meta">Basic level</div>
+          </div>
+        </li>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/claude.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title">Claude Code</div>
+            <div class="entry-meta">Building my own SEO automations</div>
+          </div>
+        </li>
+        <li class="with-logo">
+          <span class="entry-logo icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0V8zM12 18v4"/></svg>
+          </span>
+          <div>
+            <div class="entry-title">MCP servers &amp; AI tools</div>
+            <div class="entry-meta">Connecting AI assistants to SEO data and tools</div>
+          </div>
+        </li>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/github.svg" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title">GitHub</div>
+            <div class="entry-meta">Version control and publishing projects</div>
+          </div>
+        </li>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/canva.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title">Canva</div>
+            <div class="entry-meta">Visuals for content and social media</div>
+          </div>
+        </li>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/snov.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title">Snov.io</div>
+            <div class="entry-meta">Finding contacts and outreach for link building</div>
+          </div>
+        </li>
+        <li class="with-logo">
+          <span class="entry-logo icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+          </span>
+          <div>
+            <div class="entry-title">Office tools</div>
+            <div class="entry-meta">Google Sheets, Microsoft Excel, and other office apps</div>
+          </div>
+        </li>
+        <li class="with-logo">
+          <span class="entry-logo icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"/></svg>
+          </span>
+          <div>
+            <div class="entry-title">Communication tools</div>
+            <div class="entry-meta">Slack, Mattermost, Microsoft Teams, Planfix</div>
+          </div>
+        </li>
       </ul>
     </section>
 
     <section>
       <h2>Industries</h2>
-      <ul class="tags">
-        <li>Healthcare</li>
-        <li>HealthTech</li>
-        <li>IT</li>
-        <li>E-commerce</li>
+      <ul class="entries">
+        <li class="with-logo">
+          <span class="entry-logo icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/></svg>
+          </span>
+          <div>
+            <div class="entry-title">Healthcare</div>
+            <div class="entry-meta">SEO for an online platform where medical specialists offer online and offline consultations: strategy, keyword research, content plans, service and blog pages, link building, and monthly reporting.</div>
+          </div>
+        </li>
+        <li class="with-logo">
+          <span class="entry-logo icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg>
+          </span>
+          <div>
+            <div class="entry-title">IT</div>
+            <div class="entry-meta">SEO for a software development outsourcing agency and its in-house product: keyword research, link building, metrics analysis, and automation of routine SEO tasks.</div>
+          </div>
+        </li>
+        <li class="with-logo">
+          <span class="entry-logo icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1 14H5L6 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+          </span>
+          <div>
+            <div class="entry-title">E-commerce</div>
+            <div class="entry-meta">SEO for an online store: keyword research, content plans, service and blog pages, link building, and monthly reporting.</div>
+          </div>
+        </li>
+        <li class="with-logo">
+          <span class="entry-logo icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg>
+          </span>
+          <div>
+            <div class="entry-title">HealthTech</div>
+            <div class="entry-meta">Area of interest, where my medical background and SEO meet.</div>
+          </div>
+        </li>
       </ul>
     </section>
 
@@ -475,13 +673,19 @@
     <section id="education">
       <h2>Education</h2>
       <ul class="entries">
-        <li>
-          <div class="entry-title">Doctor of Medicine (MD)</div>
-          <div class="entry-meta">Bukovinian State Medical University · 2013 – 2019</div>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/bsmu.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title">Doctor of Medicine (MD)</div>
+            <div class="entry-meta">Bukovinian State Medical University · 2013 – 2019</div>
+          </div>
         </li>
-        <li>
-          <div class="entry-title">Diploma “Digital Marketing Specialist”</div>
-          <div class="entry-meta">Genius.Space · 2025</div>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/genius-space.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title">Diploma “Digital Marketing Specialist”</div>
+            <div class="entry-meta">Genius.Space · 2025</div>
+          </div>
         </li>
       </ul>
     </section>
@@ -491,15 +695,15 @@
       <ul class="entries">
         <li>
           <div class="entry-title">Ukrainian</div>
-          <div class="entry-meta">Native or bilingual</div>
-        </li>
-        <li>
-          <div class="entry-title">Russian</div>
-          <div class="entry-meta">Full professional</div>
+          <div class="entry-meta">Native (bilingual)</div>
         </li>
         <li>
           <div class="entry-title">Romanian</div>
-          <div class="entry-meta">Professional working</div>
+          <div class="entry-meta">Native (bilingual)</div>
+        </li>
+        <li>
+          <div class="entry-title">Russian</div>
+          <div class="entry-meta">Proficient (C2)</div>
         </li>
         <li>
           <div class="entry-title">English</div>
@@ -511,53 +715,89 @@
     <section id="certifications">
       <h2>Certifications</h2>
       <ul class="entries">
-        <li>
-          <div class="entry-title"><a href="https://drive.google.com/file/d/1IutFU00GqxYbRvoS4LcMx5vP2WnxDWlT/view" target="_blank" rel="noopener">AI for Business</a></div>
-          <div class="entry-meta">Google · Dec 2025</div>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/google.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title"><a href="https://drive.google.com/file/d/1IutFU00GqxYbRvoS4LcMx5vP2WnxDWlT/view" target="_blank" rel="noopener">AI for Business</a></div>
+            <div class="entry-meta">Google · Dec 2025</div>
+          </div>
         </li>
-        <li>
-          <div class="entry-title">AI SEO Day 2025</div>
-          <div class="entry-meta">WebPromoExperts · Jun 2025</div>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/webpromoexperts.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title">AI SEO Day 2025</div>
+            <div class="entry-meta">WebPromoExperts · Jun 2025</div>
+          </div>
         </li>
-        <li>
-          <div class="entry-title"><a href="https://app.lewagon.school/certificates/y9toneni8x" target="_blank" rel="noopener">Intro to AI-driven SEO</a></div>
-          <div class="entry-meta">Le Wagon · Jun 2025</div>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/lewagon.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title"><a href="https://app.lewagon.school/certificates/y9toneni8x" target="_blank" rel="noopener">Intro to AI-driven SEO</a></div>
+            <div class="entry-meta">Le Wagon · Jun 2025</div>
+          </div>
         </li>
-        <li>
-          <div class="entry-title"><a href="https://skillshop.credential.net/dd43ce20-6c15-45b2-9f7d-e4b3f8725667" target="_blank" rel="noopener">Google Analytics Certification</a></div>
-          <div class="entry-meta">Google Skillshop · Jun 2025 (expired Jun 2026)</div>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/google.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title"><a href="https://skillshop.credential.net/dd43ce20-6c15-45b2-9f7d-e4b3f8725667" target="_blank" rel="noopener">Google Analytics Certification</a></div>
+            <div class="entry-meta">Google Skillshop · Jun 2025 (expired Jun 2026)</div>
+          </div>
         </li>
-        <li>
-          <div class="entry-title"><a href="https://static.semrush.com/academy/certificates/077619149b/kristina-barbe_6.pdf" target="_blank" rel="noopener">GA4 for SEO: How Data Helps Businesses Grow</a></div>
-          <div class="entry-meta">Semrush · May 2025 (expired May 2026)</div>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/semrush.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title"><a href="https://static.semrush.com/academy/certificates/077619149b/kristina-barbe_6.pdf" target="_blank" rel="noopener">GA4 for SEO: How Data Helps Businesses Grow</a></div>
+            <div class="entry-meta">Semrush · May 2025 (expired May 2026)</div>
+          </div>
         </li>
-        <li>
-          <div class="entry-title"><a href="https://certs.prometheus.org.ua/downloads/fb3c5c0c6ed54d609d459ca5ec9591c5/Certificate.pdf" target="_blank" rel="noopener">Getting Started with ChatGPT</a></div>
-          <div class="entry-meta">Prometheus · May 2025</div>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/prometheus.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title"><a href="https://certs.prometheus.org.ua/downloads/fb3c5c0c6ed54d609d459ca5ec9591c5/Certificate.pdf" target="_blank" rel="noopener">Getting Started with ChatGPT</a></div>
+            <div class="entry-meta">Prometheus · May 2025</div>
+          </div>
         </li>
-        <li>
-          <div class="entry-title"><a href="https://www.coursera.org/account/accomplishments/specialization/Z7G9ZD84PTSS" target="_blank" rel="noopener">Search Engine Optimization (SEO) Specialization</a></div>
-          <div class="entry-meta">University of California, Davis (Coursera) · Mar 2025</div>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/ucdavis.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title"><a href="https://www.coursera.org/account/accomplishments/specialization/Z7G9ZD84PTSS" target="_blank" rel="noopener">Search Engine Optimization (SEO) Specialization</a></div>
+            <div class="entry-meta">University of California, Davis (Coursera) · Mar 2025</div>
+          </div>
         </li>
-        <li>
-          <div class="entry-title">SEO Internship Certificate</div>
-          <div class="entry-meta">ADINDEX Digital Marketing Agency · Mar 2025</div>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/adindex.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title">SEO Internship Certificate</div>
+            <div class="entry-meta">ADINDEX Digital Marketing Agency · Mar 2025</div>
+          </div>
         </li>
-        <li>
-          <div class="entry-title"><a href="https://app.academyocean.com/verify/t5W3255ib467qoDn" target="_blank" rel="noopener">The Complete SEO Starter Course: From Beginner to Professional</a></div>
-          <div class="entry-meta">Serpstat · Jan 2025</div>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/serpstat.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title"><a href="https://app.academyocean.com/verify/t5W3255ib467qoDn" target="_blank" rel="noopener">The Complete SEO Starter Course: From Beginner to Professional</a></div>
+            <div class="entry-meta">Serpstat · Jan 2025</div>
+          </div>
         </li>
-        <li>
-          <div class="entry-title">Email Marketing Fundamentals</div>
-          <div class="entry-meta">SendPulse · Jan 2025</div>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/sendpulse.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title">Email Marketing Fundamentals</div>
+            <div class="entry-meta">SendPulse · Jan 2025</div>
+          </div>
         </li>
-        <li>
-          <div class="entry-title"><a href="https://static.semrush.com/academy/certificates/14fc0078a8/kristina-barbe_13.pdf" target="_blank" rel="noopener">Social Media Marketing Crash Course</a></div>
-          <div class="entry-meta">Semrush · Dec 2024 (expired Dec 2025)</div>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/semrush.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title"><a href="https://static.semrush.com/academy/certificates/14fc0078a8/kristina-barbe_13.pdf" target="_blank" rel="noopener">Social Media Marketing Crash Course</a></div>
+            <div class="entry-meta">Semrush · Dec 2024 (expired Dec 2025)</div>
+          </div>
         </li>
-        <li>
-          <div class="entry-title"><a href="https://certs.prometheus.org.ua/cert/da6b95d32a2a48ea855bab7887e43de8" target="_blank" rel="noopener">Digital Media and Marketing Fundamentals</a></div>
-          <div class="entry-meta">Prometheus · Sep 2024</div>
+        <li class="with-logo">
+          <img class="entry-logo" src="icons/prometheus.png" alt="" width="32" height="32" loading="lazy">
+          <div>
+            <div class="entry-title"><a href="https://certs.prometheus.org.ua/cert/da6b95d32a2a48ea855bab7887e43de8" target="_blank" rel="noopener">Digital Media and Marketing Fundamentals</a></div>
+            <div class="entry-meta">Prometheus · Sep 2024</div>
+          </div>
         </li>
       </ul>
     </section>
@@ -578,7 +818,7 @@
     </section>
 
     <footer>
-      © <span id="year">2026</span> Kristina Barbe
+      © <span id="year">2026</span> <span class="signature">Kristina Barbe</span>
     </footer>
   </main>
 
