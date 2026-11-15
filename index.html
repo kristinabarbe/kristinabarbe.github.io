@@ -120,12 +120,16 @@
       margin: 0 auto;
       padding: 10px 14px;
       display: flex;
-      gap: 4px;
-      overflow-x: auto;
-      scrollbar-width: none;
+      align-items: center;
     }
 
-    .topnav-inner::-webkit-scrollbar { display: none; }
+    .nav-links {
+      display: flex;
+      gap: 4px;
+    }
+
+    .brand,
+    .menu-toggle { display: none; }
 
     .topnav a {
       flex-shrink: 0;
@@ -143,6 +147,58 @@
     .topnav a.active {
       color: var(--accent);
       background: var(--accent-soft);
+    }
+
+    /* Phones: name on the left, menu button on the right, links drop down */
+    @media (max-width: 640px) {
+      .topnav-inner { justify-content: space-between; }
+
+      .topnav .brand {
+        display: block;
+        padding: 6px;
+        color: var(--text);
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      .menu-toggle {
+        display: inline-grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--surface);
+        color: var(--text);
+        cursor: pointer;
+      }
+
+      .menu-toggle svg { width: 20px; height: 20px; }
+      .menu-toggle .icon-close { display: none; }
+      .topnav.open .menu-toggle .icon-open { display: none; }
+      .topnav.open .menu-toggle .icon-close { display: inline; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 2px;
+        padding: 8px 14px 12px;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+      }
+
+      .topnav.open .nav-links { display: flex; }
+
+      .nav-links a {
+        padding: 10px 12px;
+        font-size: 1rem;
+      }
     }
 
     section { scroll-margin-top: 72px; }
@@ -177,7 +233,7 @@
     @media (max-width: 480px) {
       .profile { gap: 18px; }
       .avatar { width: 88px; height: 88px; border-width: 3px; }
-      .role { font-size: 1rem; }
+      .profile .role { font-size: 1rem; }
     }
 
     h1 {
@@ -298,13 +354,22 @@
 <body>
   <nav class="topnav" aria-label="Sections">
     <div class="topnav-inner">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#languages">Languages</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#contact">Contact</a>
+      <a class="brand" href="#">Kristina Barbe</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path class="icon-open" d="M4 7h16M4 12h16M4 17h16"/>
+          <path class="icon-close" d="M6 6l12 12M18 6L6 18"/>
+        </svg>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#languages">Languages</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
   </nav>
 
@@ -521,22 +586,29 @@
     document.getElementById("year").textContent = new Date().getFullYear();
 
     // Highlight the menu item for the section currently in view
-    const navLinks = document.querySelectorAll(".topnav a");
+    const navLinks = document.querySelectorAll(".nav-links a");
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         navLinks.forEach((link) => {
           const isActive = link.getAttribute("href") === "#" + entry.target.id;
           link.classList.toggle("active", isActive);
-          // On narrow screens, keep the active item visible in the scrollable menu
-          if (isActive) {
-            const bar = link.parentElement;
-            bar.scrollLeft = link.offsetLeft - (bar.clientWidth - link.offsetWidth) / 2;
-          }
         });
       });
     }, { rootMargin: "-30% 0px -60% 0px" });
     document.querySelectorAll("main section[id]").forEach((s) => observer.observe(s));
+
+    // Mobile menu: open/close with the button, close after picking a section or pressing Esc
+    const nav = document.querySelector(".topnav");
+    const toggle = document.querySelector(".menu-toggle");
+    const setMenu = (open) => {
+      nav.classList.toggle("open", open);
+      toggle.setAttribute("aria-expanded", open);
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    };
+    toggle.addEventListener("click", () => setMenu(!nav.classList.contains("open")));
+    nav.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
   </script>
 </body>
 </html>
